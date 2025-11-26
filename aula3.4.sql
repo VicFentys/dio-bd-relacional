@@ -11,14 +11,16 @@ CREATE TABLE usuarios_nova (
 -- Migrando os dados --
 
 INSERT INTO usuarios_nova
-SELECT * from usuarios;
+SELECT * FROM usuarios;
 
 -- Excluindo tabela anterior --
-DROP table usuarios;
+DROP TABLE usuarios;
 
 -- Renomeando nova tabela --
-ALTER TABLE usuarios_nova RENAME usuarios;
+ALTER TABLE usuarios_nova RENAME TO usuarios;
 
+-- Renomar no SQL Server --
+EXEC sp_rename usuarios_nova,  viagens_usuarios;
 
 -- Ou opção 2 : Alterar tamanho da coluna endereço -- 
-ALTER TABLE usuarios MODIFY COLUMN endereco VARCHAR(100);
+ALTER TABLE usuarios ALTER COLUMN endereco VARCHAR(100);

@@ -1,5 +1,3 @@
-
-
 -- Primary Key--
 -- Tabela "usuarios"
 ALTER TABLE usuarios
